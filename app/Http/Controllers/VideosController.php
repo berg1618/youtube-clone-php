@@ -9,14 +9,20 @@ class VideosController extends Controller
 {
     public function index()
     {
-        Video::find(1);
+        $videos =  Video::all();
+        $data = 'dados';
+        return view('videos.index', ['videos' => $videos]);
     }
 
     public function store(Request $request)
     {
         $video = new Video();
         $video->create([
-            $request
+            'name' => $request->get('name'),
+            'description' => $request->get('description'),
+            'user_id' => $request->get('user_id'),
+            'created_at' => time(),
+            'updated_at' => time()
         ]);
     }
 
