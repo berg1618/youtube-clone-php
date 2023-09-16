@@ -15,9 +15,9 @@ class VideosController extends Controller
     public function store(Request $request)
     {
         $video = new Video();
-        $video= $request;
-
-        $video->save();
+        $video->create([
+            $request
+        ]);
     }
 
     public function show(Video $video)
@@ -25,7 +25,7 @@ class VideosController extends Controller
         //
     }
 
- 
+
     public function update(Request $request, Video $video)
     {
         //
