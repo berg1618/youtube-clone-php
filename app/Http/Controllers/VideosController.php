@@ -10,7 +10,6 @@ class VideosController extends Controller
     public function index()
     {
         $videos =  Video::all();
-        $data = 'dados';
         return view('videos.index', ['videos' => $videos]);
     }
 
