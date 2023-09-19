@@ -15,6 +15,7 @@ class Video extends Model
         'name',
         'user_id',
         'description',
+        "path",
         "created_at",
         "updated_at",
     ];

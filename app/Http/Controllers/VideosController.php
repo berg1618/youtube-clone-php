@@ -13,6 +13,11 @@ class VideosController extends Controller
         return view('videos.index', ['videos' => $videos]);
     }
 
+    public function create()
+    {
+        return view('videos.create');
+    }
+
     public function store(Request $request)
     {
         $video = new Video();
