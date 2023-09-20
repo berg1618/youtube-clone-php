@@ -20,14 +20,21 @@ class VideosController extends Controller
 
     public function store(Request $request)
     {
+
+        $data = $request->all();
         $video = new Video();
+
+        $data['path'] = $request->file->store('video');
+
         $video->create([
-            'name' => $request->get('name'),
-            'description' => $request->get('description'),
-            'user_id' => $request->get('user_id'),
+            ...$data,
+            'user_id' => $request->get('user_id') || 1,
             'created_at' => time(),
             'updated_at' => time()
         ]);
+
+        return redirect()->route('videos.index')->with('success', 'File Uploaded Successfully');
+
     }
 
     public function show(Video $video)
