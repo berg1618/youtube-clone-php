@@ -15,7 +15,7 @@
 
 <body>
     <header class="flex items-center p-6 justify-between">
-        <a href="#">
+        <a href="{{route('videos.index')}}">
             <img src="logo.png" alt="YouTube Logo" class="h-8" />
         </a>
         <form class="flex mt-0 mr-8 mb-0 ml-16">
@@ -27,7 +27,7 @@
             </button>
         </form>
         <div class="grid items-center gap-6 grid-cols-4">
-            <a href="#">
+            <a href="{{route('videos.create')}}">
                 <img src="video-plus.svg" alt="Upload Video" />
             </a>
             <a href="#">
@@ -36,7 +36,7 @@
             <a href="#">
                 <img src="bell.svg" alt="Notifications" />
             </a>
-            <a href="#">
+            <a href="{{route('profile.edit')}}">
                 <img class="w-9 h-9 rounded-3xl" src="bangela.jpeg" alt="Your Channel" />
             </a>
         </div>
