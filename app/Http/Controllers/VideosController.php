@@ -18,11 +18,14 @@ class VideosController extends Controller
         return view('videos.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Video $video)
     {
 
         $data = $request->all();
-        $video = new Video();
+
+        $request->validate([
+            'video' => 'required|file|mimetypes:video/mp4',
+        ]);
 
         $data['path'] = $request->file->store('video');
 
@@ -39,7 +42,7 @@ class VideosController extends Controller
 
     public function show(Video $video)
     {
-        //
+        return view('videos.show', ['video' => $video]);
     }
 
 
