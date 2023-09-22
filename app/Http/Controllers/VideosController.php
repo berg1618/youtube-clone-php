@@ -23,10 +23,6 @@ class VideosController extends Controller
 
         $data = $request->all();
 
-        $request->validate([
-            'video' => 'required|file|mimetypes:video/mp4',
-        ]);
-
         $data['path'] = $request->file->store('video');
 
         $video->create([
