@@ -2,8 +2,8 @@
 
 @section('content')
     <section class="flex items-center flex-col">
-        <video width="890" height="500" controls>
-            <source src="storage/app/public/video/bangela.mp4" type="video/mp4">
+        <video controls width="890" height="500">
+            <source src="{{ asset("storage/{$video->path}")}}" type="video/mp4">
         </video>
 
         <div class="w-1/2">
