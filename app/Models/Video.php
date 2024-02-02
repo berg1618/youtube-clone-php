@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Video extends Model
 {
+
+    protected $connection = 'mongodb';
+
     protected $table = 'videos';
 
     protected $fillable = [

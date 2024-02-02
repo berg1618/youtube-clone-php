@@ -11,6 +11,10 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+
+    protected  $connection = 'mongodb';
+
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -18,6 +22,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     
     protected $fillable = [
         'name',
         'email',
