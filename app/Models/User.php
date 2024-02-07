@@ -14,6 +14,8 @@ class User extends Authenticatable
 
     protected  $connection = 'mongodb';
 
+    protected  $collection = 'laracoll';
+
 
     use HasApiTokens, HasFactory, Notifiable;
 

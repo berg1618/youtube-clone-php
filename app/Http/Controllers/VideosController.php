@@ -10,7 +10,9 @@ class VideosController extends Controller
     public function index()
     {
         $videos =  Video::all();
+
         return view('videos.index', ['videos' => $videos]);
+
     }
 
     public function create()
